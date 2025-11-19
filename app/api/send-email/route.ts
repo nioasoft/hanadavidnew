@@ -4,7 +4,7 @@ import { resend } from '@/lib/resend';
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, email, phone, message } = body;
+    const { name, email, phone, message, preferredLanguage } = body;
 
     if (!name || !email || !message) {
       return NextResponse.json(
@@ -26,6 +26,7 @@ export async function POST(request: NextRequest) {
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
+        <p><strong>Preferred Language:</strong> ${preferredLanguage || 'Not provided'}</p>
         <p><strong>Message:</strong></p>
         <p>${message}</p>
       `,
