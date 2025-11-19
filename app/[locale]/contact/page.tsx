@@ -3,7 +3,7 @@
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import ContactForm from '@/components/sections/ContactForm';
-import { Phone, Mail } from 'lucide-react';
+import { Phone, Mail, Globe } from 'lucide-react';
 import { useState } from 'react';
 import Button from '@/components/ui/Button';
 import Link from 'next/link';
@@ -51,29 +51,36 @@ export default function ContactPage() {
                       <Phone className="w-5 h-5" />
                     </div>
                     {/* Force LTR for phone number to prevent scrambling in RTL mode */}
-                    <a href="tel:+972501234567" dir="ltr" className="text-card-foreground text-base font-medium leading-normal flex-1 truncate hover:text-primary transition-colors text-start">
-                      +972 50-123-4567
+                    <a 
+                      href="https://wa.me/972534406993" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      dir="ltr" 
+                      className="text-card-foreground text-base font-medium leading-normal flex-1 truncate hover:text-primary transition-colors ltr:text-left rtl:text-right"
+                    >
+                      +972 53-440-6993
                     </a>
                   </div>
                   <div className="flex items-center gap-4 px-4 min-h-16 py-4">
                     <div className="text-muted-foreground flex items-center justify-center rounded-lg bg-muted shrink-0 size-10">
                       <Mail className="w-5 h-5" />
                     </div>
-                    <a href="mailto:hana@example.com" className="text-card-foreground text-base font-medium leading-normal flex-1 truncate hover:text-primary transition-colors">
-                      hana@example.com
+                    <a href="mailto:miss.anna.davidi@gmail.com" className="text-card-foreground text-base font-medium leading-normal flex-1 truncate hover:text-primary transition-colors">
+                      miss.anna.davidi@gmail.com
                     </a>
                   </div>
                 </div>
               </div>
 
-              {/* Location Section (Map Placeholder) */}
+              {/* Virtual Location Section */}
               <div className="flex flex-col gap-4">
                 <h2 className="text-foreground text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-2">
                   {t('contact.whereToFind')}
                 </h2>
                 <div className="flex flex-col gap-4 p-4 border border-border rounded-xl bg-card">
-                  <div className="aspect-video w-full rounded-lg overflow-hidden relative bg-muted flex items-center justify-center">
-                     <div className="text-muted-foreground font-medium">
+                  <div className="aspect-video w-full rounded-lg overflow-hidden relative bg-secondary/10 flex flex-col items-center justify-center gap-3 border border-secondary/20">
+                     <Globe className="w-12 h-12 text-primary" />
+                     <div className="text-primary font-bold">
                         {t('contact.mapPlaceholder')}
                      </div>
                   </div>
