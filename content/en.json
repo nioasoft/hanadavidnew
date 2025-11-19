@@ -3,6 +3,7 @@
     "home": "Home",
     "about": "About",
     "services": "Services",
+    "courses": "Courses",
     "process": "Process",
     "contact": "Contact"
   },
@@ -67,6 +68,22 @@
       "title": "Ready to Start Your English Journey?",
       "description": "Let's talk about your goals and create a learning plan that works for you. Schedule a free 20-minute consultation—no commitment required.",
       "button": "Schedule Free Consultation"
+    },
+    "testimonials": {
+      "title": "What My Students Say",
+      "subtitle": "Real results from professionals just like you.",
+      "items": [
+        {
+          "quote": "I nailed my job interview in English, something I never thought possible before. The focus on practical conversation was a game-changer.",
+          "author": "Sarah L.",
+          "role": "Software Engineer"
+        },
+        {
+          "quote": "I finally feel comfortable speaking with my international colleagues on video calls. The personalized feedback made all the difference.",
+          "author": "David K.",
+          "role": "Marketing Manager"
+        }
+      ]
     }
   },
   "about": {

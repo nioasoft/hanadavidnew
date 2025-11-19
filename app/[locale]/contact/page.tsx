@@ -1,12 +1,12 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 import ContactForm from '@/components/sections/ContactForm';
-import Card from '@/components/ui/Card';
-import { CardContent, CardTitle } from '@/components/ui/Card';
-import Button from '@/components/ui/Button';
-import { Calendar, Mail, MessageCircle } from 'lucide-react';
+import { Phone, Mail } from 'lucide-react';
 import { useState } from 'react';
+import Button from '@/components/ui/Button';
+import Link from 'next/link';
 
 export default function ContactPage() {
   const t = useTranslations();
@@ -19,139 +19,102 @@ export default function ContactPage() {
 
   return (
     <>
-      {/* Header Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-cream to-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-soft-black mb-4">
-            {t('contact.header.title')}
-          </h1>
-          <p className="text-xl text-medium-gray">
-            {t('contact.header.subtitle')}
-          </p>
-        </div>
-      </section>
-
-      {/* Success Message */}
-      {formSuccess && (
-        <section className="bg-green-50 border border-green-200 text-green-800 py-4">
-          <div className="max-w-4xl mx-auto px-4 text-center">
-            <p className="text-lg font-medium">{t('common.sent')}</p>
-            <p className="text-sm mt-1">I'll get back to you within 24 hours!</p>
-          </div>
-        </section>
-      )}
-
-      {/* Contact Form Section */}
-      <section className="py-16 md:py-24">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
-            <div className="text-center mb-8">
-              <h2 className="text-2xl md:text-3xl font-bold text-soft-black mb-4">
-                Send Me a Message
-              </h2>
-              <p className="text-medium-gray">
-                Fill out the form below and I'll get back to you soon
+      <div className="px-4 md:px-10 flex flex-1 justify-center py-10 md:py-16 container mx-auto max-w-screen-2xl">
+        <div className="flex flex-col max-w-5xl flex-1 gap-12 md:gap-16">
+          
+          {/* Page Heading */}
+          <div className="flex flex-wrap justify-center text-center gap-3 p-4">
+            <div className="flex w-full flex-col items-center gap-4">
+              <h1 className="text-foreground text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em]">
+                {t('contact.header.title')}
+              </h1>
+              <p className="text-muted-foreground text-lg font-normal leading-normal max-w-2xl">
+                {t('contact.header.subtitle')}
               </p>
             </div>
-            <ContactForm onSuccess={handleFormSuccess} />
-          </div>
-        </div>
-      </section>
-
-      {/* Alternative Contact Methods */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-soft-black">
-              {t('contact.alternative.title')}
-            </h2>
-            <p className="text-xl text-medium-gray mt-4">
-              {t('contact.alternative.description')}
-            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Email */}
-            <Card className="text-center hover:shadow-xl transition-shadow duration-200">
-              <CardContent className="p-8">
-                <div className="flex justify-center mb-4">
-                  <div className="w-16 h-16 rounded-full bg-pale-blue bg-opacity-20 flex items-center justify-center">
-                    <Mail className="w-8 h-8 text-pale-blue" />
+          {/* Main Content Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 md:gap-10">
+            
+            {/* Left Column: Contact Info & Map */}
+            <div className="lg:col-span-2 flex flex-col gap-10">
+              
+              {/* Contact Information Section */}
+              <div className="flex flex-col gap-4">
+                <h2 className="text-foreground text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-2">
+                  Contact Information
+                </h2>
+                <div className="flex flex-col border border-border rounded-xl bg-card overflow-hidden">
+                  <div className="flex items-center gap-4 px-4 min-h-16 border-b border-border py-4">
+                    <div className="text-muted-foreground flex items-center justify-center rounded-lg bg-muted shrink-0 size-10">
+                      <Phone className="w-5 h-5" />
+                    </div>
+                    {/* Force LTR for phone number to prevent scrambling in RTL mode */}
+                    <a href="tel:+972501234567" dir="ltr" className="text-card-foreground text-base font-medium leading-normal flex-1 truncate hover:text-primary transition-colors text-start">
+                      +972 50-123-4567
+                    </a>
+                  </div>
+                  <div className="flex items-center gap-4 px-4 min-h-16 py-4">
+                    <div className="text-muted-foreground flex items-center justify-center rounded-lg bg-muted shrink-0 size-10">
+                      <Mail className="w-5 h-5" />
+                    </div>
+                    <a href="mailto:hana@example.com" className="text-card-foreground text-base font-medium leading-normal flex-1 truncate hover:text-primary transition-colors">
+                      hana@example.com
+                    </a>
                   </div>
                 </div>
-                <CardTitle className="text-xl mb-4">
-                  Email
-                </CardTitle>
-                <p className="text-medium-gray mb-4">
-                  Send me an email directly
-                </p>
-                <a
-                  href="mailto:hana@example.com"
-                  className="text-pale-blue hover:text-blue-600 font-medium"
-                >
-                  hana@example.com
-                </a>
-              </CardContent>
-            </Card>
+              </div>
 
-            {/* WhatsApp */}
-            <Card className="text-center hover:shadow-xl transition-shadow duration-200">
-              <CardContent className="p-8">
-                <div className="flex justify-center mb-4">
-                  <div className="w-16 h-16 rounded-full bg-green-500 bg-opacity-20 flex items-center justify-center">
-                    <MessageCircle className="w-8 h-8 text-green-600" />
+              {/* Location Section (Map Placeholder) */}
+              <div className="flex flex-col gap-4">
+                <h2 className="text-foreground text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-2">
+                  Where to Find Me
+                </h2>
+                <div className="flex flex-col gap-4 p-4 border border-border rounded-xl bg-card">
+                  <div className="aspect-video w-full rounded-lg overflow-hidden relative bg-muted flex items-center justify-center">
+                     <div className="text-muted-foreground font-medium">
+                        Map Placeholder
+                     </div>
                   </div>
+                  <p className="text-muted-foreground text-base font-normal leading-normal">
+                    Tel Aviv, Israel
+                  </p>
                 </div>
-                <CardTitle className="text-xl mb-4">
-                  WhatsApp
-                </CardTitle>
-                <p className="text-medium-gray mb-4">
-                  Message me on WhatsApp
-                </p>
-                <a
-                  href="https://wa.me/972XXXXXXXXX"
-                  className="text-green-600 hover:text-green-700 font-medium"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  +972-XX-XXX-XXXX
-                </a>
-              </CardContent>
-            </Card>
+              </div>
 
-            {/* Schedule Call */}
-            <Card className="text-center hover:shadow-xl transition-shadow duration-200">
-              <CardContent className="p-8">
-                <div className="flex justify-center mb-4">
-                  <div className="w-16 h-16 rounded-full bg-sage-green bg-opacity-20 flex items-center justify-center">
-                    <Calendar className="w-8 h-8 text-sage-green" />
-                  </div>
-                </div>
-                <CardTitle className="text-xl mb-4">
-                  Schedule a Call
-                </CardTitle>
-                <p className="text-medium-gray mb-6">
-                  Book a free 20-minute consultation
-                </p>
-                <Button
-                  variant="primary"
-                  onClick={() => {
-                    window.location.href = '#contact-form';
-                  }}
-                >
-                  Schedule Now
+            </div>
+
+            {/* Right Column: Contact Form */}
+            <div className="lg:col-span-3 flex flex-col gap-6 p-6 md:p-8 border border-border rounded-xl bg-card">
+              <h2 className="text-foreground text-[22px] font-bold leading-tight tracking-[-0.015em] mb-4">
+                Send Me a Message
+              </h2>
+              <ContactForm onSuccess={handleFormSuccess} />
+            </div>
+
+          </div>
+
+          {/* Consultation Booking Section */}
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-10 p-8 rounded-xl bg-secondary/50 border border-border">
+            <div className="flex flex-col gap-3 text-center md:text-start">
+              <h2 className="text-foreground text-2xl md:text-3xl font-bold leading-tight tracking-[-0.015em]">
+                {t('contact.alternative.title')}
+              </h2>
+              <p className="text-muted-foreground text-base font-normal leading-normal max-w-2xl">
+                {t('contact.alternative.description')}
+              </p>
+            </div>
+            {/* Replaced hardcoded button with UI Button component */}
+            <Link href="/contact">
+                <Button size="lg" variant="primary">
+                    Schedule Free Consultation
                 </Button>
-              </CardContent>
-            </Card>
+            </Link>
           </div>
 
-          <div className="text-center mt-12">
-            <p className="text-medium-gray">
-              {t('contact.alternative.direct')}
-            </p>
-          </div>
         </div>
-      </section>
+      </div>
     </>
   );
 }

@@ -11,7 +11,7 @@ export default function IconCard({ icon, title, description, className = '' }: I
   return (
     <div className={`bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-200 p-6 text-center hover:-translate-y-1 ${className}`}>
       <div className="flex justify-center mb-4">
-        <div className="text-pale-blue">
+        <div className="text-primary">
           {icon}
         </div>
       </div>

@@ -65,15 +65,15 @@ export default function ProcessPage() {
                 {t.raw('process.expectations.items').map((item: string, index: number) => (
                   <div
                     key={index}
-                    className="bg-gradient-to-r from-pale-blue to-sage-green bg-opacity-10 rounded-xl p-6 hover:shadow-lg transition-all duration-200"
+                    className="bg-white dark:bg-background-dark border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:shadow-lg transition-all duration-200"
                   >
                     <div className="flex items-start gap-4">
                       <div className="flex-shrink-0">
-                        <div className="w-8 h-8 rounded-full bg-pale-blue flex items-center justify-center text-white font-bold">
+                        <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold">
                           {index + 1}
                         </div>
                       </div>
-                      <p className="text-medium-gray leading-relaxed pt-1">
+                      <p className="text-gray-600 dark:text-gray-300 leading-relaxed pt-1">
                         {item}
                       </p>
                     </div>
@@ -84,8 +84,8 @@ export default function ProcessPage() {
           </div>
 
           {/* Closing statement */}
-          <div className="mt-12 bg-sage-green bg-opacity-20 rounded-xl p-8">
-            <p className="text-xl text-soft-black font-medium text-center leading-relaxed">
+          <div className="mt-12 bg-primary/10 rounded-xl p-8">
+            <p className="text-xl text-soft-black dark:text-white font-medium text-center leading-relaxed">
               {t('process.expectations.closing')}
             </p>
           </div>

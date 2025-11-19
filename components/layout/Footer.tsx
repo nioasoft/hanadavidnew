@@ -18,30 +18,30 @@ export default function Footer({ className = '' }: FooterProps) {
   ];
 
   return (
-    <footer className={`bg-white border-t border-border-light ${className}`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer className={`border-t border-border bg-muted/30 ${className}`}>
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3 lg:gap-12 text-center md:text-start">
           {/* Brand */}
-          <div>
-            <Link href="/" className="text-xl font-bold text-soft-black hover:text-pale-blue transition-colors">
+          <div className="space-y-4 flex flex-col items-center md:items-start">
+            <Link href="/" className="text-xl font-bold text-foreground hover:text-primary transition-colors">
               Hana David
             </Link>
-            <p className="mt-2 text-medium-gray text-sm">
-              CELTA-Certified English Teacher
+            <p className="text-sm text-muted-foreground max-w-xs">
+              CELTA-Certified English Teacher helping you achieve your language goals.
             </p>
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h3 className="text-sm font-semibold text-soft-black mb-4">
+          <div className="flex flex-col items-center md:items-start">
+            <h3 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wider">
               {t('footer.quickLinks')}
             </h3>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-medium-gray hover:text-soft-black text-sm transition-colors"
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -51,8 +51,8 @@ export default function Footer({ className = '' }: FooterProps) {
           </div>
 
           {/* Contact & Language */}
-          <div>
-            <h3 className="text-sm font-semibold text-soft-black mb-4">
+          <div className="flex flex-col items-center md:items-start">
+            <h3 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wider">
               Language
             </h3>
             <div className="mb-6">
@@ -62,8 +62,8 @@ export default function Footer({ className = '' }: FooterProps) {
         </div>
 
         {/* Copyright */}
-        <div className="mt-8 pt-8 border-t border-border-light">
-          <p className="text-center text-sm text-medium-gray">
+        <div className="mt-12 pt-8 border-t border-border flex justify-center">
+          <p className="text-center text-sm text-muted-foreground">
             {t('footer.copyright')}
           </p>
         </div>

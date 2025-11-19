@@ -1,114 +1,107 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import Card from '@/components/ui/Card';
-import { CardContent, CardTitle } from '@/components/ui/Card';
+import Image from 'next/image';
+import { Lightbulb, CheckCircle } from 'lucide-react';
 
 export default function AboutPage() {
   const t = useTranslations();
 
   return (
     <>
-      {/* Header Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-cream to-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-soft-black mb-4">
-            {t('about.header.title')}
-          </h1>
-          <p className="text-xl text-medium-gray">
-            {t('about.header.subtitle')}
-          </p>
+      {/* Hero Section */}
+      <section className="px-4 sm:px-10 md:px-20 lg:px-40 py-12 md:py-20 container mx-auto max-w-screen-2xl">
+        <div className="flex flex-col-reverse gap-8 lg:flex-row lg:items-center">
+           {/* Text Side */}
+           <div className="flex flex-col gap-6 text-center lg:text-start lg:w-1/2">
+             <div className="flex flex-col gap-4">
+               <h1 className="text-soft-black dark:text-white text-4xl font-black leading-tight tracking-[-0.033em] md:text-5xl">
+                 {t('about.header.title')}
+               </h1>
+               <h2 className="text-gray-700 dark:text-gray-300 text-base font-normal leading-relaxed md:text-lg">
+                 {t('about.header.subtitle')}
+               </h2>
+             </div>
+           </div>
+
+           {/* Image Side */}
+           <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
+             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden shadow-lg border-4 border-white dark:border-gray-800">
+               <Image
+                 src="/hana.webp"
+                 alt="Hana David"
+                 fill
+                 className="object-cover"
+                 priority
+               />
+             </div>
+           </div>
         </div>
       </section>
 
-      {/* Story Section */}
-      <section className="py-16 md:py-24">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-soft-black">
-              {t('about.story.title')}
-            </h2>
-          </div>
-
-          <div className="space-y-8">
-            {/* First paragraph */}
-            <div className="prose prose-lg max-w-none">
-              <p className="text-lg text-medium-gray leading-relaxed">
-                {t('about.story.paragraphs.0')}
-              </p>
-            </div>
-
-            {/* Second paragraph */}
-            <div className="prose prose-lg max-w-none">
-              <p className="text-lg text-medium-gray leading-relaxed">
-                {t('about.story.paragraphs.1')}
-              </p>
-            </div>
-
-            {/* Aliyah section */}
-            <div className="bg-white rounded-xl shadow-lg p-8 mt-8">
-              <h3 className="text-2xl font-semibold text-soft-black mb-4">
-                {t('about.aliyah.title')}
-              </h3>
-              <div className="space-y-4">
-                <p className="text-lg text-medium-gray leading-relaxed">
-                  {t('about.aliyah.paragraphs.0')}
-                </p>
-                <p className="text-lg text-medium-gray leading-relaxed">
-                  {t('about.aliyah.paragraphs.1')}
-                </p>
-              </div>
-            </div>
-
-            {/* Dedication */}
-            <div className="bg-pale-blue bg-opacity-20 rounded-xl p-8 mt-8">
-              <p className="text-xl text-soft-black font-medium text-center leading-relaxed">
-                {t('about.dedication.content')}
-              </p>
-            </div>
+      {/* My Story Section */}
+      <section className="px-4 sm:px-10 md:px-20 lg:px-40 py-12 md:py-16 bg-white dark:bg-background-dark/50">
+        <div className="container mx-auto max-w-3xl text-center">
+          <h2 className="text-3xl font-bold leading-tight tracking-[-0.015em] mb-8 text-soft-black dark:text-white">
+            {t('about.story.title')}
+          </h2>
+          <div className="space-y-6 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+             {t.raw('about.story.paragraphs').map((p: string, i: number) => (
+                <p key={i}>{p}</p>
+             ))}
           </div>
         </div>
       </section>
 
-      {/* Qualifications Section */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-soft-black">
-              {t('about.qualifications.title')}
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {t.raw('about.qualifications.items').map((item: string, index: number) => (
-              <Card key={index} className="hover:shadow-xl transition-shadow duration-200">
-                <CardContent className="text-center">
-                  <div className="text-3xl font-bold text-pale-blue mb-2">
-                    ✓
-                  </div>
-                  <CardTitle>{item}</CardTitle>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Teaching Philosophy */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-sage-green to-pale-blue bg-opacity-10">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-soft-black">
+      {/* Cards Section (Philosophy & Qualifications) */}
+      <section className="px-4 sm:px-10 md:px-20 lg:px-40 py-12 md:py-16 container mx-auto max-w-screen-2xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          {/* Teaching Philosophy Card */}
+          <div className="bg-white dark:bg-background-dark p-8 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm flex flex-col items-center text-center hover:shadow-md transition-shadow">
+            <div className="bg-secondary/10 p-4 rounded-full mb-6 text-secondary">
+              <Lightbulb className="w-8 h-8" />
+            </div>
+            <h3 className="text-xl font-bold mb-4 text-soft-black dark:text-white">
               {t('about.philosophy.title')}
-            </h2>
-          </div>
-
-          <div className="bg-white rounded-xl shadow-lg p-8 md:p-12">
-            <p className="text-xl text-medium-gray leading-relaxed text-center">
+            </h3>
+            <p className="text-base text-gray-600 dark:text-gray-300 leading-relaxed">
               {t('about.philosophy.content')}
             </p>
           </div>
+
+          {/* Qualifications Card */}
+          <div className="bg-white dark:bg-background-dark p-8 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm flex flex-col items-center text-center hover:shadow-md transition-shadow">
+            <div className="bg-secondary/10 p-4 rounded-full mb-6 text-secondary">
+              <CheckCircle className="w-8 h-8" />
+            </div>
+            <h3 className="text-xl font-bold mb-4 text-soft-black dark:text-white">
+              {t('about.qualifications.title')}
+            </h3>
+            <ul className="space-y-3 text-base text-gray-600 dark:text-gray-300">
+              {t.raw('about.qualifications.items').map((item: string, index: number) => (
+                <li key={index} className="flex items-center justify-center gap-2">
+                   <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
         </div>
+      </section>
+
+      {/* Aliyah Section (Bonus) */}
+      <section className="px-4 sm:px-10 md:px-20 lg:px-40 py-12 md:py-16 bg-primary/5 dark:bg-primary/10">
+         <div className="container mx-auto max-w-3xl text-center">
+             <h2 className="text-2xl font-bold mb-6 text-soft-black dark:text-white">
+                 {t('about.aliyah.title')}
+             </h2>
+             <div className="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
+                 {t.raw('about.aliyah.paragraphs').map((p: string, i: number) => (
+                    <p key={i}>{p}</p>
+                 ))}
+             </div>
+         </div>
       </section>
     </>
   );

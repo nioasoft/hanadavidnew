@@ -35,11 +35,7 @@ export default function LanguageSwitcher({ className = '' }: LanguageSwitcherPro
   return (
     <Link
       href={targetHref}
-      className={`inline-flex items-center px-3 py-1.5 text-sm font-medium rounded-md border transition-colors duration-200 ${
-        currentLocale === 'en'
-          ? 'border-pale-blue text-pale-blue hover:bg-pale-blue hover:text-white'
-          : 'border-sage-green text-sage-green hover:bg-sage-green hover:text-white'
-      } ${className}`}
+      className={`inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2 ${className}`}
       aria-label={`Switch to ${otherLocaleLabel}`}
     >
       {otherLocaleLabel}

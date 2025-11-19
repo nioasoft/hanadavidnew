@@ -12,18 +12,19 @@ export const Input = forwardRef(function Input(
   return (
     <div className="w-full">
       {label && (
-        <label className="block text-sm font-medium text-soft-black mb-2">
+        <label className="block text-sm font-medium text-foreground mb-2">
           {label}
         </label>
       )}
       <input
         ref={ref}
         className={`
-          w-full px-4 py-3 border rounded-lg transition-colors duration-200
-          ${error ? 'border-red-500' : 'border-border-medium'}
-          ${error ? 'focus:border-red-500 focus:ring-red-500' : 'focus:border-pale-blue focus:ring-pale-blue'}
-          focus:outline-none focus:ring-2 focus:ring-offset-1
-          bg-white text-soft-black
+          flex h-10 w-full rounded-md border bg-background px-3 py-2 text-sm ring-offset-background
+          file:border-0 file:bg-transparent file:text-sm file:font-medium
+          placeholder:text-muted-foreground
+          focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2
+          disabled:cursor-not-allowed disabled:opacity-50
+          ${error ? 'border-red-500' : 'border-input'}
           ${className}
         `}
         {...props}

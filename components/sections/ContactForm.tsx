@@ -87,6 +87,7 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
           {...register('name')}
           error={errors.name?.message}
           placeholder={t('contact.form.name')}
+          className="text-start"
         />
 
         <Input
@@ -95,6 +96,7 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
           {...register('email')}
           error={errors.email?.message}
           placeholder={t('contact.form.email')}
+          className="text-start"
         />
       </div>
 
@@ -104,19 +106,32 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
           type="tel"
           {...register('phone')}
           placeholder={t('contact.form.phone')}
+          className="text-start"
         />
 
         <div>
-          <label className="block text-sm font-medium text-soft-black mb-2">
+          <label className="block text-sm font-medium text-foreground mb-2 text-start">
             {t('contact.form.preferredLanguage')}
           </label>
-          <select
-            {...register('preferredLanguage')}
-            className="w-full px-4 py-3 border rounded-lg border-border-medium focus:border-pale-blue focus:ring-pale-blue focus:outline-none focus:ring-2 focus:ring-offset-1 bg-white text-soft-black"
-          >
-            <option value="en">{t('contact.form.lang_en')}</option>
-            <option value="he">{t('contact.form.lang_he')}</option>
-          </select>
+          <div className="relative">
+            <select
+              {...register('preferredLanguage')}
+              className="
+                flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background
+                focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2
+                disabled:cursor-not-allowed disabled:opacity-50 text-start appearance-none
+              "
+            >
+              <option value="en">{t('contact.form.lang_en')}</option>
+              <option value="he">{t('contact.form.lang_he')}</option>
+            </select>
+            {/* Arrow icon for select */}
+            <div className="pointer-events-none absolute inset-y-0 end-0 flex items-center px-2 text-muted-foreground">
+              <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -126,14 +141,15 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
         error={errors.message?.message}
         placeholder={t('contact.form.message')}
         rows={6}
+        className="text-start"
       />
 
       {submitMessage && (
         <div
-          className={`p-4 rounded-md ${
+          className={`p-4 rounded-md text-sm font-medium ${
             submitMessage.type === 'success'
-              ? 'bg-green-50 text-green-800 border border-green-200'
-              : 'bg-red-50 text-red-800 border border-red-200'
+              ? 'bg-green-50 text-green-900 dark:bg-green-900/30 dark:text-green-100 border border-green-200 dark:border-green-800'
+              : 'bg-red-50 text-red-900 dark:bg-red-900/30 dark:text-red-100 border border-red-200 dark:border-red-800'
           }`}
         >
           {submitMessage.message}

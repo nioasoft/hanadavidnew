@@ -12,11 +12,11 @@ function TimelineItem({ step, title, description, isLast = false }: TimelineItem
     <div className="flex gap-4 md:gap-6">
       {/* Step Number */}
       <div className="flex flex-col items-center">
-        <div className="flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-full bg-pale-blue text-soft-black font-bold">
+        <div className="flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-full bg-primary text-white font-bold">
           {step}
         </div>
         {!isLast && (
-          <div className="w-0.5 h-16 md:h-20 bg-border-light mt-4" />
+          <div className="w-0.5 h-16 md:h-20 bg-gray-200 dark:bg-gray-700 mt-4" />
         )}
       </div>
 

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>English Teacher for Adult Learners</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#003366",
+                        "background-light": "#f8f9fa",
+                        "background-dark": "#101622",
+                        "accent": "#d4af37"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-[#0d121b] dark:text-gray-100">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 sm:px-10 md:px-20 lg:px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+<!-- TopNavBar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 dark:border-gray-700 px-4 sm:px-10 py-3 sticky top-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm z-10">
+<div class="flex items-center gap-4 text-primary dark:text-gray-100">
+<span class="material-symbols-outlined text-3xl"> school </span>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">English Teacher</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-8">
+<div class="flex items-center gap-9">
+<a class="text-sm font-medium leading-normal hover:text-primary dark:hover:text-accent" href="#home">Home</a>
+<a class="text-sm font-medium leading-normal hover:text-primary dark:hover:text-accent" href="#about">About</a>
+<a class="text-sm font-medium leading-normal hover:text-primary dark:hover:text-accent" href="#method">Method</a>
+<a class="text-sm font-medium leading-normal hover:text-primary dark:hover:text-accent" href="#testimonials">Testimonials</a>
+<a class="text-sm font-medium leading-normal hover:text-primary dark:hover:text-accent" href="#contact">Contact</a>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white dark:text-gray-100 text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+<span class="truncate">Schedule a Call</span>
+</button>
+</div>
+<button class="md:hidden flex items-center justify-center rounded-lg h-10 w-10 text-primary dark:text-gray-100">
+<span class="material-symbols-outlined"> menu </span>
+</button>
+</header>
+<main class="flex flex-col gap-12 sm:gap-16 md:gap-20">
+<!-- HeroSection -->
+<section class="@container mt-10" id="home">
+<div class="flex flex-col gap-6 px-4 py-10 @[480px]:gap-8 @[864px]:flex-row-reverse @[864px]:items-center">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl @[480px]:h-auto @[480px]:min-w-[300px] @[864px]:w-2/5" data-alt="Professional and friendly portrait of the English teacher." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCLXg52RfVLHomrSXhSunPDT5tol-6ftobbQ0ZYXVa3uXIbq_4FJLE9pBaGn-p1H2Eed6jPvXLLa3VKjpO9VKM2Th614ZSoAkMsSA9XJuLGf54H6_OSKjA-S2InWKc8Me-7l4kOSQjkDJzcddPb2MMi4TuQzAhDY8erRhiOAOe9xHilllaxtySIjvJ6LDmSpPM2wLrwr1JkO1LKz7P7UX9E7EfHps98MGMpTjfhLECWyF4nXSEGmbt3ENigh1Kr-k5LkOAk-6UVwQQ");'></div>
+<div class="flex flex-col gap-6 @[480px]:min-w-[400px] @[480px]:gap-8 @[864px]:justify-center flex-1">
+<div class="flex flex-col gap-2 text-left">
+<h1 class="text-[#0d121b] dark:text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">Unlock Your Potential with Fluent English</h1>
+<h2 class="text-gray-700 dark:text-gray-300 text-base font-normal leading-normal @[480px]:text-lg">Customized, one-on-one lessons for adult learners who want to speak with confidence.</h2>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-primary text-white dark:text-gray-100 text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base hover:opacity-90 transition-opacity">
+<span class="truncate">Book a Free Intro Session</span>
+</button>
+</div>
+</div>
+</section>
+<!-- About Me Section -->
+<section id="about">
+<h2 class="text-[#0d121b] dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">About Me</h2>
+<p class="text-gray-700 dark:text-gray-300 text-base font-normal leading-relaxed pb-3 pt-1 px-4">With over 10 years of experience, I specialize in helping adult professionals overcome their communication barriers. My passion is to see my students thrive in their careers and personal lives through confident English speaking.</p>
+</section>
+<!-- FeatureSection / My Unique Method -->
+<section class="flex flex-col gap-10 px-4 py-10 @container" id="method">
+<div class="flex flex-col gap-4">
+<h1 class="text-[#0d121b] dark:text-white tracking-tight text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]">How We'll Achieve Your Goals</h1>
+<p class="text-gray-700 dark:text-gray-300 text-base font-normal leading-normal max-w-[720px]">My unique method is built around your specific needs, focusing on practical skills for real-world success.</p>
+</div>
+<div class="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-4 p-0">
+<div class="flex flex-1 gap-4 rounded-lg border border-gray-200 dark:border-gray-700 bg-background-light dark:bg-background-dark p-4 flex-col">
+<span class="material-symbols-outlined text-3xl text-primary dark:text-accent"> person </span>
+<div class="flex flex-col gap-1">
+<h2 class="text-[#0d121b] dark:text-white text-base font-bold leading-tight">Personalized Learning</h2>
+<p class="text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal">Every lesson plan is tailored to your individual goals, industry, and learning style.</p>
+</div>
+</div>
+<div class="flex flex-1 gap-4 rounded-lg border border-gray-200 dark:border-gray-700 bg-background-light dark:bg-background-dark p-4 flex-col">
+<span class="material-symbols-outlined text-3xl text-primary dark:text-accent"> forum </span>
+<div class="flex flex-col gap-1">
+<h2 class="text-[#0d121b] dark:text-white text-base font-bold leading-tight">Focus on Conversation</h2>
+<p class="text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal">We prioritize active speaking and listening to build your fluency and confidence quickly.</p>
+</div>
+</div>
+<div class="flex flex-1 gap-4 rounded-lg border border-gray-200 dark:border-gray-700 bg-background-light dark:bg-background-dark p-4 flex-col">
+<span class="material-symbols-outlined text-3xl text-primary dark:text-accent"> business_center </span>
+<div class="flex flex-col gap-1">
+<h2 class="text-[#0d121b] dark:text-white text-base font-bold leading-tight">Real-World English</h2>
+<p class="text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal">Learn the language you'll actually use in business meetings, presentations, and social situations.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section class="px-4 py-10" id="testimonials">
+<div class="flex flex-col gap-4 text-center items-center">
+<h2 class="text-[#0d121b] dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em]">What My Students Say</h2>
+<p class="text-gray-700 dark:text-gray-300 text-base font-normal leading-normal max-w-[720px]">Real results from professionals just like you.</p>
+</div>
+<div class="mt-8 grid gap-8 sm:grid-cols-1 lg:grid-cols-2">
+<div class="bg-white dark:bg-gray-800/50 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
+<p class="text-gray-700 dark:text-gray-300 italic">"I nailed my job interview in English, something I never thought possible before. The focus on practical conversation was a game-changer."</p>
+<div class="mt-4 flex items-center">
+<img class="h-12 w-12 rounded-full object-cover" data-alt="Photo of Sarah L." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYs2zAGNzMJ7kVZk7SowTKWOyv3PKe4q7YJI_Z2NzDuX1Ht80fqINBJTMaSqR62MLh9ER2mF236KOWlhFuC6WLPVaHW-BZ_TXWfNFAg3rZWUKQdDpYItEpTYljDtC9zOIQjgnJxLp3V7_LN5FeHSx5M6y0lj-FTrmh8zcuODaxNlUC8gMJdhulXsG98M-0D47BP9vmYjAvlXOUI2xb_LmZ1SlulDUKp_UM_6HFXC7RMTy3KgD8yKvls-phJKBdQEYn7QN4kv2hGQU"/>
+<div class="ml-4">
+<p class="font-semibold text-[#0d121b] dark:text-white">Sarah L.</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">Software Engineer</p>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-gray-800/50 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
+<p class="text-gray-700 dark:text-gray-300 italic">"I finally feel comfortable speaking with my international colleagues on video calls. The personalized feedback made all the difference."</p>
+<div class="mt-4 flex items-center">
+<img class="h-12 w-12 rounded-full object-cover" data-alt="Photo of David K." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAB5ELITXy3kv4ElWxhYlS9sBHHtb6o1OdCHIH0VegwxHO3UdZ9NFOi6bn8pBsfYUio-REJ5Yz6k7nFUAyZJD-fy3dOvdbup4juEXy7IST_1OFffNuaKF66e5CwSCG-pRODfATpxMd8XTGuEyNAGixOMKGBCkrnQbzEOoZbSnG4bRF89CJeDc8S4ojwKzv0U_I2xROykKsjIBeqVFgcLUjCvrMljqHB1ji8jegjbMMFMbmefoy062ectSAAYTfFRQE1XxnarnH0Jmk"/>
+<div class="ml-4">
+<p class="font-semibold text-[#0d121b] dark:text-white">David K.</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">Marketing Manager</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="bg-primary/10 dark:bg-primary/20 rounded-lg px-4 sm:px-8 py-10 text-center" id="contact">
+<div class="flex flex-col gap-4 items-center">
+<h2 class="text-primary dark:text-white text-[28px] font-bold leading-tight tracking-[-0.015em]">Ready to Improve Your English?</h2>
+<p class="text-gray-800 dark:text-gray-200 text-base font-normal leading-normal max-w-xl">Take the first step towards fluency and confidence. Schedule your free, no-obligation introductory session today.</p>
+<button class="mt-4 flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-white dark:text-gray-100 text-base font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+<span class="truncate">Schedule Your Free Session</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="mt-20 border-t border-solid border-gray-200 dark:border-gray-700 px-4 sm:px-10 py-8">
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+<p class="text-sm text-gray-500 dark:text-gray-400">© 2024 English Teacher. All rights reserved.</p>
+<div class="flex items-center gap-4 text-gray-500 dark:text-gray-400">
+<a class="hover:text-primary dark:hover:text-accent" href="#">
+<svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path></svg>
+</a>
+<a class="hover:text-primary dark:hover:text-accent" href="#">
+<svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
+</a>
+<a class="hover:text-primary dark:hover:text-accent" href="#">
+<svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12.011c0 4.61 3.064 8.504 7.236 9.795.528.096.723-.222.723-.493 0-.242-.009-1.062-.014-1.928-2.973.63-3.601-1.23-3.601-1.23-.481-1.208-1.174-1.53-1.174-1.53-.959-.645.072-.632.072-.632 1.06.074 1.617 1.076 1.617 1.076.942 1.59 2.472 1.13 3.073.864.096-.672.368-1.13.672-1.39-2.343-.26-4.805-1.15-4.805-5.132 0-1.134.408-2.062 1.077-2.788-.108-.26-.467-1.318.102-2.748 0 0 .886-.28 2.903 1.068a9.927 9.927 0 012.64-.354c.904.004 1.805.12 2.64.354 2.017-1.348 2.903-1.068 2.903-1.068.57 1.43.21 2.488.102 2.748.67.726 1.077 1.654 1.077 2.788 0 3.992-2.467 4.87-4.82 5.122.378.32.712.956.712 1.926 0 1.39-.012 2.512-.012 2.852 0 .274.194.594.728.492C18.939 20.51 22 16.61 22 12.01C22 6.477 17.523 2 12 2z" fill-rule="evenodd"></path></svg>
+</a>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</div>
+</div>
+</body></html>

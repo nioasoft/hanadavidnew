@@ -1,0 +1,35 @@
+
+> hana-david-website@0.1.0 dev
+> next dev
+
+   ▲ Next.js 16.0.3 (Turbopack)
+   - Local:         http://localhost:3000
+   - Network:       http://10.0.0.13:3000
+
+ ✓ Starting...
+ ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+ ✓ Ready in 752ms
+ GET /en 200 in 2.2s (compile: 1924ms, proxy.ts: 3ms, render: 231ms)
+ GET /he 200 in 74ms (compile: 8ms, proxy.ts: 5ms, render: 62ms)
+ GET /en/about 200 in 859ms (compile: 753ms, proxy.ts: 18ms, render: 87ms)
+ GET /he/about 200 in 63ms (compile: 7ms, proxy.ts: 4ms, render: 51ms)
+ GET /en/services 200 in 701ms (compile: 631ms, proxy.ts: 16ms, render: 54ms)
+ GET /he/services 200 in 113ms (compile: 11ms, proxy.ts: 5ms, render: 98ms)
+ GET /en/process 200 in 615ms (compile: 567ms, proxy.ts: 7ms, render: 42ms)
+ GET /he/process 200 in 92ms (compile: 17ms, proxy.ts: 6ms, render: 69ms)
+ GET /en/contact 200 in 804ms (compile: 709ms, proxy.ts: 3ms, render: 93ms)
+ GET /he/contact 200 in 70ms (compile: 7ms, proxy.ts: 6ms, render: 56ms)
+ GET /en 200 in 99ms (compile: 13ms, proxy.ts: 15ms, render: 71ms)
+ GET /he 200 in 63ms (compile: 9ms, proxy.ts: 8ms, render: 46ms)
+ GET /en/services 200 in 56ms (compile: 8ms, proxy.ts: 3ms, render: 45ms)
+ GET /he/services 200 in 52ms (compile: 9ms, proxy.ts: 6ms, render: 38ms)
+ GET /en/contact 200 in 61ms (compile: 13ms, proxy.ts: 6ms, render: 42ms)
+ GET /he/contact 200 in 46ms (compile: 6ms, proxy.ts: 5ms, render: 35ms)
+ ✓ Compiled in 86ms
+ ✓ Compiled in 37ms
+ GET /he/contact 200 in 127ms (compile: 71ms, proxy.ts: 7ms, render: 48ms)
+ GET /he/contact 200 in 25ms (compile: 3ms, proxy.ts: 6ms, render: 17ms)
+ GET /he/contact 200 in 18ms (compile: 4ms, proxy.ts: 2ms, render: 12ms)
+ GET /he/contact 200 in 17ms (compile: 1744µs, proxy.ts: 2ms, render: 13ms)
+ GET /he/contact 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET /he 200 in 117ms (compile: 81ms, proxy.ts: 10ms, render: 26ms)

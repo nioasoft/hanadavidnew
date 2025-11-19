@@ -1,39 +1,91 @@
 @import "tailwindcss";
 
-:root {
-  --background-cream: #FAFAF8;
-  --background-surface: #FFFFFF;
-  --text-primary: #2D2D2D;
-  --text-secondary: #6B6B6B;
-  --accent-pale-blue: #A8C5DD;
-  --accent-sage-green: #B8D4C8;
-  --accent-warm-beige: #E8E4DF;
-  --border-light: #E5E3DE;
-  --border-medium: #D4D0C8;
-}
+@theme {
+  /* Define semantic color structure */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
 
-@theme inline {
-  --color-background: var(--background-surface);
-  --color-foreground: var(--text-primary);
-  --color-cream: var(--background-cream);
-  --color-soft-black: var(--text-primary);
-  --color-medium-gray: var(--text-secondary);
-  --color-pale-blue: var(--accent-pale-blue);
-  --color-sage-green: var(--accent-sage-green);
-  --color-warm-beige: var(--accent-warm-beige);
-  --color-border-light: var(--border-light);
-  --color-border-medium: var(--border-medium);
+  /* Keep specific font definitions */
   --font-sans: var(--font-inter);
   --font-hebrew: var(--font-heebo);
 }
 
-/* RTL/LTR Support */
-[dir="rtl"] {
-  text-align: right;
+:root {
+  /* Light Mode - Soft Neutrals & Deep Blue */
+  --background: #FAFAF8; /* Cream */
+  --foreground: #1F2937; /* Gray-900 */
+
+  --card: #FFFFFF;
+  --card-foreground: #1F2937;
+
+  --primary: #003366; /* Deep Blue */
+  --primary-foreground: #FFFFFF;
+
+  --secondary: #E0F2F1; /* Very Light Teal/Sage */
+  --secondary-foreground: #004D40;
+
+  --accent: #D4AF37; /* Gold */
+  --accent-foreground: #FFFFFF;
+
+  --muted: #F3F4F6;
+  --muted-foreground: #6B7280;
+
+  --border: #E5E7EB;
+  --input: #E5E7EB;
+  --ring: #003366;
+
+  --radius: 0.5rem;
 }
 
-[dir="ltr"] {
-  text-align: left;
+.dark {
+  /* Dark Mode - Deep Navy & Soft Text */
+  --background: #0B1120; /* Very dark blue/black */
+  --foreground: #F9FAFB; /* Gray-50 */
+
+  --card: #111827; /* Gray-900 */
+  --card-foreground: #F9FAFB;
+
+  --primary: #60A5FA; /* Lighter Blue for dark mode contrast */
+  --primary-foreground: #0B1120;
+
+  --secondary: #1F2937;
+  --secondary-foreground: #F9FAFB;
+
+  --accent: #FCD34D; /* Lighter Gold */
+  --accent-foreground: #0B1120;
+
+  --muted: #374151;
+  --muted-foreground: #9CA3AF;
+
+  --border: #374151;
+  --input: #374151;
+  --ring: #60A5FA;
+}
+
+/* Base styles */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
 }
 
 /* Smooth scrolling */
@@ -41,43 +93,8 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Base styles */
-body {
-  background: var(--background-cream);
-  color: var(--text-primary);
-  font-family: var(--font-sans);
-}
-
-/* Utility classes */
-.section-padding {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-}
-
-@media (min-width: 768px) {
-  .section-padding {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-  }
-}
-
-/* RTL specific adjustments */
-[dir="rtl"] .mr-4 {
-  margin-right: 0;
-  margin-left: 1rem;
-}
-
-[dir="rtl"] .ml-4 {
-  margin-left: 0;
-  margin-right: 1rem;
-}
-
-[dir="rtl"] .space-x-4 > * + * {
-  margin-right: 0;
-  margin-left: 1rem;
-}
-
-[dir="rtl"] .space-x-8 > * + * {
-  margin-right: 0;
-  margin-left: 2rem;
+/* Typography defaults */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--foreground);
+  font-weight: 700;
 }

@@ -1,5 +1,5 @@
-import { ReactNode } from 'react';
-import Button from '@/components/ui/Button';
+import Image from 'next/image';
+import Button from '../ui/Button';
 
 interface HeroProps {
   title: string;
@@ -8,7 +8,7 @@ interface HeroProps {
   ctaSecondary?: string;
   onPrimaryClick?: () => void;
   onSecondaryClick?: () => void;
-  image?: ReactNode;
+  image?: React.ReactNode;
   className?: string;
 }
 
@@ -16,60 +16,52 @@ export default function Hero({
   title,
   subtitle,
   ctaPrimary,
-  ctaSecondary,
   onPrimaryClick,
-  onSecondaryClick,
-  image,
   className = ''
 }: HeroProps) {
   return (
-    <section className={`bg-gradient-to-br from-cream to-white py-20 md:py-32 ${className}`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Content */}
-          <div className="space-y-6 lg:max-w-xl mx-auto lg:mx-0">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-soft-black leading-tight">
-              {title}
-            </h1>
+    <section className={`py-12 md:py-20 lg:py-24 ${className}`} id="hero">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col gap-12 lg:flex-row-reverse lg:items-center lg:gap-16">
+          {/* Image Side */}
+          <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
+            <div className="relative aspect-square w-full max-w-md overflow-hidden rounded-2xl shadow-2xl ring-1 ring-gray-900/10 dark:ring-gray-100/10">
+              <Image
+                src="/hana.webp"
+                alt="Hana David"
+                fill
+                className="object-cover"
+                priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 500px"
+              />
+            </div>
+          </div>
 
-            {subtitle && (
-              <p className="text-lg md:text-xl text-medium-gray leading-relaxed">
-                {subtitle}
-              </p>
-            )}
-
-            {(ctaPrimary || ctaSecondary) && (
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                {ctaPrimary && (
-                  <Button
-                    variant="primary"
-                    size="lg"
+          {/* Text Side */}
+          <div className="flex flex-col gap-6 text-center lg:text-start lg:w-1/2">
+            <div className="space-y-4">
+              <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-6xl">
+                {title}
+              </h1>
+              {subtitle && (
+                <p className="text-lg text-muted-foreground sm:text-xl leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                  {subtitle}
+                </p>
+              )}
+            </div>
+            
+            <div className="flex justify-center lg:justify-start pt-4">
+               {ctaPrimary && (
+                  <Button 
                     onClick={onPrimaryClick}
+                    size="lg"
+                    className="w-full sm:w-auto"
                   >
                     {ctaPrimary}
                   </Button>
-                )}
-                {ctaSecondary && (
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    onClick={onSecondaryClick}
-                  >
-                    {ctaSecondary}
-                  </Button>
-                )}
-              </div>
-            )}
-          </div>
-
-          {/* Image */}
-          {image && (
-            <div className="flex justify-center lg:justify-end">
-              <div className="relative">
-                {image}
-              </div>
+               )}
             </div>
-          )}
+          </div>
         </div>
       </div>
     </section>
