@@ -43,7 +43,7 @@ export default function ContactPage() {
               {/* Contact Information Section */}
               <div className="flex flex-col gap-4">
                 <h2 className="text-foreground text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-2">
-                  Contact Information
+                  {t('contact.infoTitle')}
                 </h2>
                 <div className="flex flex-col border border-border rounded-xl bg-card overflow-hidden">
                   <div className="flex items-center gap-4 px-4 min-h-16 border-b border-border py-4">
@@ -69,16 +69,16 @@ export default function ContactPage() {
               {/* Location Section (Map Placeholder) */}
               <div className="flex flex-col gap-4">
                 <h2 className="text-foreground text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-2">
-                  Where to Find Me
+                  {t('contact.whereToFind')}
                 </h2>
                 <div className="flex flex-col gap-4 p-4 border border-border rounded-xl bg-card">
                   <div className="aspect-video w-full rounded-lg overflow-hidden relative bg-muted flex items-center justify-center">
                      <div className="text-muted-foreground font-medium">
-                        Map Placeholder
+                        {t('contact.mapPlaceholder')}
                      </div>
                   </div>
                   <p className="text-muted-foreground text-base font-normal leading-normal">
-                    Tel Aviv, Israel
+                    {t('contact.location')}
                   </p>
                 </div>
               </div>
@@ -88,7 +88,7 @@ export default function ContactPage() {
             {/* Right Column: Contact Form */}
             <div className="lg:col-span-3 flex flex-col gap-6 p-6 md:p-8 border border-border rounded-xl bg-card">
               <h2 className="text-foreground text-[22px] font-bold leading-tight tracking-[-0.015em] mb-4">
-                Send Me a Message
+                {t('contact.sendMessage')}
               </h2>
               <ContactForm onSuccess={handleFormSuccess} />
             </div>
@@ -108,7 +108,7 @@ export default function ContactPage() {
             {/* Replaced hardcoded button with UI Button component */}
             <Link href="/contact">
                 <Button size="lg" variant="primary">
-                    Schedule Free Consultation
+                    {t('home.hero.cta_primary')}
                 </Button>
             </Link>
           </div>

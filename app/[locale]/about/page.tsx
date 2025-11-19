@@ -41,14 +41,35 @@ export default function AboutPage() {
 
       {/* My Story Section */}
       <section className="px-4 sm:px-10 md:px-20 lg:px-40 py-12 md:py-16 bg-muted/30">
-        <div className="container mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-bold leading-tight tracking-[-0.015em] mb-8 text-foreground">
+        <div className="container mx-auto max-w-4xl text-center">
+          <h2 className="text-4xl font-bold leading-tight tracking-[-0.015em] mb-8 text-foreground">
             {t('about.story.title')}
           </h2>
-          <div className="space-y-6 text-lg text-foreground/90 leading-relaxed">
+          <div className="space-y-6 text-lg text-foreground/90 leading-relaxed text-start">
              {t.raw('about.story.paragraphs').map((p: string, i: number) => (
                 <p key={i}>{p}</p>
              ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonial Highlight */}
+      <section className="px-4 sm:px-10 md:px-20 lg:px-40 py-16 container mx-auto max-w-screen-2xl">
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-primary/5 border-l-4 border-primary p-8 md:p-12 rounded-r-xl relative">
+            <div className="text-6xl text-primary/20 absolute top-4 left-4 font-serif">"</div>
+            <blockquote className="text-2xl md:text-3xl font-medium text-foreground italic leading-relaxed relative z-10 text-center md:text-start">
+              {t('about.testimonial.quote')}
+            </blockquote>
+            <div className="mt-6 flex items-center justify-center md:justify-start gap-3">
+              <div className="h-1 bg-primary w-12 rounded-full"></div>
+              <cite className="text-lg font-bold text-foreground not-italic">
+                {t('about.testimonial.author')}
+                <span className="font-normal text-muted-foreground block md:inline md:mx-2 text-sm md:text-lg">
+                  {t('about.testimonial.role')}
+                </span>
+              </cite>
+            </div>
           </div>
         </div>
       </section>
@@ -62,7 +83,7 @@ export default function AboutPage() {
             <div className="bg-secondary/10 p-4 rounded-full mb-6 text-secondary-foreground">
               <Lightbulb className="w-8 h-8" />
             </div>
-            <h3 className="text-xl font-bold mb-4 text-card-foreground">
+            <h3 className="text-2xl font-bold mb-6 text-card-foreground">
               {t('about.philosophy.title')}
             </h3>
             <p className="text-base text-foreground/80 leading-relaxed">
@@ -75,12 +96,13 @@ export default function AboutPage() {
             <div className="bg-secondary/10 p-4 rounded-full mb-6 text-secondary-foreground">
               <CheckCircle className="w-8 h-8" />
             </div>
-            <h3 className="text-xl font-bold mb-4 text-card-foreground">
+            <h3 className="text-2xl font-bold mb-6 text-card-foreground">
               {t('about.qualifications.title')}
             </h3>
             <ul className="space-y-3 text-base text-foreground/80">
               {t.raw('about.qualifications.items').map((item: string, index: number) => (
                 <li key={index} className="flex items-center justify-center gap-2">
+                   <CheckCircle className="w-4 h-4 text-primary" />
                    <span>{item}</span>
                 </li>
               ))}

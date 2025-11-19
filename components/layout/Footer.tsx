@@ -27,7 +27,7 @@ export default function Footer({ className = '' }: FooterProps) {
               Hana David
             </Link>
             <p className="text-sm text-muted-foreground max-w-xs">
-              CELTA-Certified English Teacher helping you achieve your language goals.
+              {t('footer.tagline')}
             </p>
           </div>
 

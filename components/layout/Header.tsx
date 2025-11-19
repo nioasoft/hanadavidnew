@@ -33,7 +33,7 @@ export default function Header() {
         {/* Logo */}
         <Link href={`/${locale}`} className="flex items-center gap-2 text-primary hover:opacity-90 transition-opacity">
            <GraduationCap className="h-8 w-8" />
-           <h2 className="text-lg font-bold leading-tight tracking-tight text-foreground">English Teacher</h2>
+           <h2 className="text-lg font-bold leading-tight tracking-tight text-foreground">{t('header.subtitle')}</h2>
         </Link>
 
         {/* Desktop Navigation */}
@@ -68,7 +68,7 @@ export default function Header() {
           <LanguageSwitcher />
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="inline-flex items-center justify-center rounded-md p-2 text-foreground hover:bg-accent hover:text-accent-foreground"
+            className="inline-flex items-center justify-center rounded-md p-2 text-foreground hover:bg-secondary hover:text-secondary-foreground transition-colors duration-200"
           >
             <span className="sr-only">Toggle menu</span>
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -78,16 +78,16 @@ export default function Header() {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden border-t border-border bg-background">
+        <div className="md:hidden border-t border-border bg-background animate-in slide-in-from-top-1 fade-in duration-200">
           <div className="space-y-1 px-4 pb-3 pt-2">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={`/${locale}${link.href}`}
-                className={`block rounded-md px-3 py-2 text-base font-medium ${
+                className={`block rounded-md px-3 py-2 text-base font-medium transition-colors duration-200 ${
                   isActive(link.href)
-                    ? 'bg-accent text-accent-foreground'
-                    : 'text-muted-foreground hover:bg-accent hover:text-accent-foreground'
+                    ? 'bg-secondary text-secondary-foreground font-bold'
+                    : 'text-muted-foreground hover:bg-secondary/50 hover:text-secondary-foreground'
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >

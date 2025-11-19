@@ -69,7 +69,7 @@ export default function ServicesPage() {
       <section id="courses" className="py-16 md:py-24 bg-muted/30">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold tracking-tight text-foreground text-center mb-12">
-             Find the Right Course for You
+             {t('services.coursesTitle')}
           </h2>
           
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
