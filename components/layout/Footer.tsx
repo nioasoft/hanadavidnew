@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import LanguageSwitcher from './LanguageSwitcher';
 
@@ -23,8 +24,16 @@ export default function Footer({ className = '' }: FooterProps) {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3 lg:gap-12 text-center md:text-start">
           {/* Brand */}
           <div className="space-y-4 flex flex-col items-center md:items-start">
-            <Link href="/" className="text-xl font-bold text-foreground hover:text-primary transition-colors">
-              Hana David
+            <Link href="/" className="flex items-center gap-3 text-xl font-bold text-foreground hover:text-primary transition-colors">
+              <div className="relative h-12 w-12">
+                <Image 
+                  src="/logo.png" 
+                  alt="Hana David Logo" 
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <span>Hana David</span>
             </Link>
             <p className="text-sm text-muted-foreground max-w-xs">
               {t('footer.tagline')}
