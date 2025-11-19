@@ -24,8 +24,8 @@ export default function Footer({ className = '' }: FooterProps) {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3 lg:gap-12 text-center md:text-start">
           {/* Brand */}
           <div className="space-y-4 flex flex-col items-center md:items-start">
-            <Link href="/" className="flex items-center gap-3 text-xl font-bold text-foreground hover:text-primary transition-colors">
-              <div className="relative h-12 w-12">
+            <Link href="/" className="flex flex-col items-center md:items-start gap-4 text-xl font-bold text-foreground hover:text-primary transition-colors">
+              <div className="relative h-32 w-32">
                 <Image 
                   src="/logo.png" 
                   alt="Hana David Logo" 

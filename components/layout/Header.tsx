@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import LanguageSwitcher from './LanguageSwitcher';
@@ -29,11 +30,22 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-sm">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        {/* Logo */}
-        <Link href={`/${locale}`} className="flex items-center gap-2 text-primary hover:opacity-90 transition-opacity">
-           <GraduationCap className="h-8 w-8" />
-           <h2 className="text-lg font-bold leading-tight tracking-tight text-foreground">{t('header.subtitle')}</h2>
+      <div className="mx-auto flex h-24 md:h-40 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        {/* Logo Section */}
+        <Link href={`/${locale}`} className="flex items-center gap-3 md:gap-6 text-primary hover:opacity-90 transition-opacity max-w-[70%] sm:max-w-none">
+           <GraduationCap className="h-8 w-8 md:h-12 md:w-12 shrink-0" />
+           <h2 className="text-lg md:text-2xl font-bold leading-tight tracking-tight text-foreground truncate">{t('header.subtitle')}</h2>
+           
+           {/* Additional Image Logo */}
+           <div className="relative h-20 w-20 md:h-36 md:w-36 ms-2 md:ms-4 shrink-0">
+             <Image 
+               src="/logo.png" 
+               alt="Hana David Logo" 
+               fill
+               className="object-contain"
+               priority
+             />
+           </div>
         </Link>
 
         {/* Desktop Navigation */}
