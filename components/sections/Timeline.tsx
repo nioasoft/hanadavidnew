@@ -22,12 +22,12 @@ function TimelineItem({ step, title, description, isLast = false }: TimelineItem
 
       {/* Content */}
       <div className="pb-8 md:pb-12 flex-1">
-        <h3 className="text-lg md:text-xl font-semibold text-soft-black mb-3">
+        <h3 className="text-lg md:text-xl font-semibold text-foreground mb-3">
           {title}
         </h3>
         <div className="space-y-2">
           {description.map((item, index) => (
-            <p key={index} className="text-medium-gray leading-relaxed">
+            <p key={index} className="text-foreground/80 leading-relaxed">
               {item}
             </p>
           ))}

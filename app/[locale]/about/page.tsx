@@ -15,10 +15,10 @@ export default function AboutPage() {
            {/* Text Side */}
            <div className="flex flex-col gap-6 text-center lg:text-start lg:w-1/2">
              <div className="flex flex-col gap-4">
-               <h1 className="text-soft-black dark:text-white text-4xl font-black leading-tight tracking-[-0.033em] md:text-5xl">
+               <h1 className="text-foreground text-4xl font-black leading-tight tracking-[-0.033em] md:text-5xl">
                  {t('about.header.title')}
                </h1>
-               <h2 className="text-gray-700 dark:text-gray-300 text-base font-normal leading-relaxed md:text-lg">
+               <h2 className="text-foreground/80 text-base font-normal leading-relaxed md:text-lg">
                  {t('about.header.subtitle')}
                </h2>
              </div>
@@ -40,12 +40,12 @@ export default function AboutPage() {
       </section>
 
       {/* My Story Section */}
-      <section className="px-4 sm:px-10 md:px-20 lg:px-40 py-12 md:py-16 bg-white dark:bg-background-dark/50">
+      <section className="px-4 sm:px-10 md:px-20 lg:px-40 py-12 md:py-16 bg-muted/30">
         <div className="container mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-bold leading-tight tracking-[-0.015em] mb-8 text-soft-black dark:text-white">
+          <h2 className="text-3xl font-bold leading-tight tracking-[-0.015em] mb-8 text-foreground">
             {t('about.story.title')}
           </h2>
-          <div className="space-y-6 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+          <div className="space-y-6 text-lg text-foreground/90 leading-relaxed">
              {t.raw('about.story.paragraphs').map((p: string, i: number) => (
                 <p key={i}>{p}</p>
              ))}
@@ -58,27 +58,27 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           
           {/* Teaching Philosophy Card */}
-          <div className="bg-white dark:bg-background-dark p-8 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm flex flex-col items-center text-center hover:shadow-md transition-shadow">
-            <div className="bg-secondary/10 p-4 rounded-full mb-6 text-secondary">
+          <div className="bg-card p-8 rounded-xl border border-border shadow-sm flex flex-col items-center text-center hover:shadow-md transition-shadow">
+            <div className="bg-secondary/10 p-4 rounded-full mb-6 text-secondary-foreground">
               <Lightbulb className="w-8 h-8" />
             </div>
-            <h3 className="text-xl font-bold mb-4 text-soft-black dark:text-white">
+            <h3 className="text-xl font-bold mb-4 text-card-foreground">
               {t('about.philosophy.title')}
             </h3>
-            <p className="text-base text-gray-600 dark:text-gray-300 leading-relaxed">
+            <p className="text-base text-foreground/80 leading-relaxed">
               {t('about.philosophy.content')}
             </p>
           </div>
 
           {/* Qualifications Card */}
-          <div className="bg-white dark:bg-background-dark p-8 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm flex flex-col items-center text-center hover:shadow-md transition-shadow">
-            <div className="bg-secondary/10 p-4 rounded-full mb-6 text-secondary">
+          <div className="bg-card p-8 rounded-xl border border-border shadow-sm flex flex-col items-center text-center hover:shadow-md transition-shadow">
+            <div className="bg-secondary/10 p-4 rounded-full mb-6 text-secondary-foreground">
               <CheckCircle className="w-8 h-8" />
             </div>
-            <h3 className="text-xl font-bold mb-4 text-soft-black dark:text-white">
+            <h3 className="text-xl font-bold mb-4 text-card-foreground">
               {t('about.qualifications.title')}
             </h3>
-            <ul className="space-y-3 text-base text-gray-600 dark:text-gray-300">
+            <ul className="space-y-3 text-base text-foreground/80">
               {t.raw('about.qualifications.items').map((item: string, index: number) => (
                 <li key={index} className="flex items-center justify-center gap-2">
                    <span>{item}</span>
@@ -91,12 +91,12 @@ export default function AboutPage() {
       </section>
 
       {/* Aliyah Section (Bonus) */}
-      <section className="px-4 sm:px-10 md:px-20 lg:px-40 py-12 md:py-16 bg-primary/5 dark:bg-primary/10">
+      <section className="px-4 sm:px-10 md:px-20 lg:px-40 py-12 md:py-16 bg-secondary/10">
          <div className="container mx-auto max-w-3xl text-center">
-             <h2 className="text-2xl font-bold mb-6 text-soft-black dark:text-white">
+             <h2 className="text-2xl font-bold mb-6 text-foreground">
                  {t('about.aliyah.title')}
              </h2>
-             <div className="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
+             <div className="space-y-4 text-foreground/90 leading-relaxed">
                  {t.raw('about.aliyah.paragraphs').map((p: string, i: number) => (
                     <p key={i}>{p}</p>
                  ))}
