@@ -1,4 +1,7 @@
 {
+  "header": {
+    "subtitle": "English Teacher"
+  },
   "nav": {
     "home": "Home",
     "about": "About",
@@ -102,8 +105,15 @@
         "Born and raised in the United States, I developed a deep love for reading and languages from an early age. I studied history, foreign languages (French, Latin, Russian, and Spanish), and creative writing at the University of Memphis, while also volunteering to teach English to new immigrants.",
         "After making aliyah to Israel in 2019, I pursued my dream of becoming a professional English teacher. In January 2025, I completed the prestigious CELTA certification (Certificate in English Language Teaching to Adults), where I was mentored by experienced EFL teachers and taught students from around the world.",
         "During my training, I received high marks for creating authentic, engaging lesson materials, building strong connections with students, and designing relevant, practical lessons that make learning enjoyable.",
+        "Over the past five years, I have had the privilege of working with a diverse range of students—from high-tech professionals aiming to polish their presentation skills to university students preparing for rigorous academic exams. My approach blends Communicative Language Teaching with task-based learning, ensuring that every grammar point or vocabulary word is immediately applicable to real-life situations.",
+        "One of my proudest moments was helping a student who was terrified of public speaking deliver a keynote address in English at an international conference. Seeing his transformation from anxiety to confidence reaffirmed my belief that with the right support, anyone can master English.",
         "Now, I'm dedicated to helping you achieve your English goals through personalized, one-on-one instruction tailored to your specific needs and learning style."
       ]
+    },
+    "testimonial": {
+      "quote": "Hana's lessons are not just about grammar; they are about building the confidence to express yourself. She changed the way I view English.",
+      "author": "Michael R.",
+      "role": "Entrepreneur"
     },
     "aliyah": {
       "title": "Making Aliyah & Teaching in Israel",
@@ -138,6 +148,7 @@
       "title": "How I Can Help",
       "subtitle": "Tailored English Instruction for Your Goals"
     },
+    "coursesTitle": "Find the Right Course for You",
     "whatYoullLearn": "What you'll learn:",
     "idealFor": "Ideal for:",
     "services": [
@@ -206,6 +217,10 @@
       "title": "How We'll Work Together",
       "subtitle": "A Clear Path to English Confidence"
     },
+    "intro": {
+      "title": "A Journey Tailored to You",
+      "description": "Learning a language is a personal journey. My process is designed to be transparent, flexible, and focused entirely on your progress. From our first conversation to achieving your goals, every step is customized to your learning style and needs."
+    },
     "steps": [
       {
         "title": "Free Consultation (20-30 minutes)",
@@ -264,6 +279,27 @@
         "Use English Daily - Try to practice outside our lessons when possible"
       ],
       "closing": "I'm here to guide, support, and challenge you—but your commitment is what makes real progress possible. Together, we'll achieve your English goals."
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": [
+        {
+          "question": "How long is each lesson?",
+          "answer": "Standard lessons are 60 minutes, but I also offer 45-minute intensive sessions or 90-minute deep dives depending on your preference and schedule."
+        },
+        {
+          "question": "Do I need to buy textbooks?",
+          "answer": "No. I provide all learning materials, including custom worksheets, articles, and digital resources tailored to your specific interests and goals."
+        },
+        {
+          "question": "What happens if I need to cancel a lesson?",
+          "answer": "Life happens! You can cancel or reschedule a lesson with at least 24 hours' notice at no charge."
+        },
+        {
+          "question": "Do you assign homework?",
+          "answer": "Yes, but it's optional and tailored to your time constraints. Practice between lessons significantly speeds up your progress."
+        }
+      ]
     }
   },
   "contact": {
@@ -275,6 +311,11 @@
       "title": "Let's Start Your English Journey",
       "subtitle": "Schedule a free consultation today and take the first step toward confident English"
     },
+    "infoTitle": "Contact Information",
+    "whereToFind": "Where to Find Me",
+    "mapPlaceholder": "Map Placeholder",
+    "location": "Tel Aviv, Israel",
+    "sendMessage": "Send Me a Message",
     "form": {
       "name": "Name",
       "email": "Email",
@@ -294,6 +335,7 @@
     }
   },
   "footer": {
+    "tagline": "CELTA-Certified English Teacher helping you achieve your language goals.",
     "quickLinks": "Quick Links",
     "copyright": "© 2025 Hana David English Teacher. All rights reserved."
   }
