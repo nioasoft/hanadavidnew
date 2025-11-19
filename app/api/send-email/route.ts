@@ -17,30 +17,59 @@ export async function POST(request: NextRequest) {
     const TO_EMAIL = 'miss.anna.davidi@gmail.com';
     const FROM_EMAIL = 'onboarding@resend.dev'; // Or your verified domain
 
-    const { data, error } = await resend.emails.send({
-      from: `Hana David Website <${FROM_EMAIL}>`,
-      to: [TO_EMAIL],
-      subject: `New contact form submission from ${name}`,
-      html: `
-        <h1>New Contact Form Submission</h1>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
-        <p><strong>Preferred Language:</strong> ${preferredLanguage || 'Not provided'}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message}</p>
-      `,
-    });
+    try {
+      console.log('Attempting to send email with Resend...', {
+        to: TO_EMAIL,
+        from: FROM_EMAIL,
+        hasApiKey: !!process.env.RESEND_API_KEY,
+        apiKeyPrefix: process.env.RESEND_API_KEY?.substring(0, 10)
+      });
 
-    if (error) {
-      console.error('Error sending email:', error);
+      const result = await resend.emails.send({
+        from: `Hana David Website <${FROM_EMAIL}>`,
+        to: [TO_EMAIL],
+        subject: `New contact form submission from ${name}`,
+        html: `
+          <h1>New Contact Form Submission</h1>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
+          <p><strong>Preferred Language:</strong> ${preferredLanguage || 'Not provided'}</p>
+          <p><strong>Message:</strong></p>
+          <p>${message}</p>
+        `,
+      });
+
+      console.log('Resend API response:', result);
+
+      // Check if there's an error in the response
+      if (result.error) {
+        console.error('Resend API error details:', {
+          error: result.error,
+          name,
+          email,
+          timestamp: new Date().toISOString()
+        });
+        return NextResponse.json(
+          { error: 'Failed to send email', details: result.error.message },
+          { status: 500 }
+        );
+      }
+
+      return NextResponse.json({ success: true, data: result.data });
+
+    } catch (resendError) {
+      console.error('Resend SDK exception caught:', {
+        error: resendError,
+        message: resendError instanceof Error ? resendError.message : 'Unknown error',
+        stack: resendError instanceof Error ? resendError.stack : undefined,
+        timestamp: new Date().toISOString()
+      });
       return NextResponse.json(
-        { error: 'Failed to send email' },
+        { error: 'Email service error', details: resendError instanceof Error ? resendError.message : 'Unknown error' },
         { status: 500 }
       );
     }
-
-    return NextResponse.json({ success: true, data });
   } catch (error) {
     console.error('Error processing request:', error);
     return NextResponse.json(

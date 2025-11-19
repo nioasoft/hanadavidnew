@@ -27,7 +27,7 @@ export default function Hero({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
-          <div className="space-y-6">
+          <div className="space-y-6 lg:max-w-xl mx-auto lg:mx-0">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-soft-black leading-tight">
               {title}
             </h1>

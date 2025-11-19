@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import LanguageSwitcher from './LanguageSwitcher';
@@ -31,11 +32,15 @@ export default function Header() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <Link
-              href={`/${locale}`}
-              className="text-xl font-bold text-soft-black hover:text-pale-blue transition-colors"
-            >
-              Hana David | English Teacher
+            <Link href={`/${locale}`} className="flex items-center hover:opacity-90 transition-opacity">
+              <Image
+                src="/logo.png"
+                alt="Hana David | English Teacher"
+                width={144}
+                height={45}
+                priority
+                className="h-auto"
+              />
             </Link>
           </div>
 
