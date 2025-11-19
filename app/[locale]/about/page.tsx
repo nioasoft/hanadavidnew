@@ -10,7 +10,7 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="px-4 sm:px-10 md:px-20 lg:px-40 py-12 md:py-20 container mx-auto max-w-screen-2xl">
+      <section className="px-4 sm:px-10 md:px-20 lg:px-40 py-10 md:py-16 container mx-auto max-w-screen-2xl">
         <div className="flex flex-col-reverse gap-8 lg:flex-row lg:items-center">
            {/* Text Side */}
            <div className="flex flex-col gap-6 text-center lg:text-start lg:w-1/2">
@@ -40,7 +40,7 @@ export default function AboutPage() {
       </section>
 
       {/* My Story Section */}
-      <section className="px-4 sm:px-10 md:px-20 lg:px-40 py-12 md:py-16 bg-muted/30">
+      <section className="px-4 sm:px-10 md:px-20 lg:px-40 py-10 md:py-14 bg-muted/30">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-4xl font-bold leading-tight tracking-[-0.015em] mb-8 text-foreground">
             {t('about.story.title')}
@@ -54,7 +54,7 @@ export default function AboutPage() {
       </section>
 
       {/* Testimonial Highlight */}
-      <section className="px-4 sm:px-10 md:px-20 lg:px-40 py-16 container mx-auto max-w-screen-2xl">
+      <section className="px-4 sm:px-10 md:px-20 lg:px-40 py-12 container mx-auto max-w-screen-2xl">
         <div className="max-w-4xl mx-auto">
           <div className="bg-primary/5 border-l-4 border-primary p-8 md:p-12 rounded-r-xl relative">
             <div className="text-6xl text-primary/20 absolute top-4 left-4 font-serif">"</div>
@@ -75,8 +75,8 @@ export default function AboutPage() {
       </section>
 
       {/* Cards Section (Philosophy & Qualifications) */}
-      <section className="px-4 sm:px-10 md:px-20 lg:px-40 py-12 md:py-16 container mx-auto max-w-screen-2xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <section className="px-4 sm:px-10 md:px-20 lg:px-40 py-10 md:py-14 container mx-auto max-w-screen-2xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           
           {/* Teaching Philosophy Card */}
           <div className="bg-card p-8 rounded-xl border border-border shadow-sm flex flex-col items-center text-center hover:shadow-md transition-shadow">
@@ -113,7 +113,7 @@ export default function AboutPage() {
       </section>
 
       {/* Aliyah Section (Bonus) */}
-      <section className="px-4 sm:px-10 md:px-20 lg:px-40 py-12 md:py-16 bg-secondary/10">
+      <section className="px-4 sm:px-10 md:px-20 lg:px-40 py-10 md:py-14 bg-secondary/10">
          <div className="container mx-auto max-w-3xl text-center">
              <h2 className="text-2xl font-bold mb-6 text-foreground">
                  {t('about.aliyah.title')}

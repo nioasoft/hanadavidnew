@@ -28,9 +28,9 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-background py-16 md:py-24">
+      <section className="bg-background py-12 md:py-20">
          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col gap-12 lg:flex-row-reverse lg:items-center">
+            <div className="flex flex-col gap-10 lg:flex-row-reverse lg:items-center">
                {/* Hero Image */}
                <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-muted lg:w-1/2 shadow-lg">
                   <Image 
@@ -66,13 +66,13 @@ export default function ServicesPage() {
       </section>
 
       {/* Courses Grid Section */}
-      <section id="courses" className="py-16 md:py-24 bg-muted/30">
+      <section id="courses" className="py-12 md:py-20 bg-muted/30">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold tracking-tight text-foreground text-center mb-12">
              {t('services.coursesTitle')}
           </h2>
           
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
              {t.raw('services.services').map((service: any, index: number) => (
                 <div key={index} className="flex flex-col overflow-hidden rounded-xl border border-border bg-card shadow-sm transition-all duration-200 hover:shadow-lg group">
                    {/* Image Area */}
@@ -121,6 +121,10 @@ export default function ServicesPage() {
                             </p>
                          </div>
                       </div>
+
+                      <Button variant="outline" className="w-full sm:w-auto self-start">
+                         Learn More
+                      </Button>
                    </div>
                 </div>
              ))}
@@ -129,7 +133,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Benefits Section (Approach) */}
-      <section className="bg-background py-16 md:py-24">
+      <section className="bg-background py-12 md:py-20">
          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center mb-12">
                <h2 className="text-3xl font-bold text-foreground">

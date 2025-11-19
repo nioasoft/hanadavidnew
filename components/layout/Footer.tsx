@@ -19,7 +19,7 @@ export default function Footer({ className = '' }: FooterProps) {
 
   return (
     <footer className={`border-t border-border bg-muted/30 ${className}`}>
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3 lg:gap-12 text-center md:text-start">
           {/* Brand */}
           <div className="space-y-4 flex flex-col items-center md:items-start">
@@ -62,7 +62,7 @@ export default function Footer({ className = '' }: FooterProps) {
         </div>
 
         {/* Copyright */}
-        <div className="mt-12 pt-8 border-t border-border flex justify-center">
+        <div className="mt-8 pt-8 border-t border-border flex justify-center">
           <p className="text-center text-sm text-muted-foreground">
             {t('footer.copyright')}
           </p>

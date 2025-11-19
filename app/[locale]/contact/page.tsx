@@ -19,8 +19,8 @@ export default function ContactPage() {
 
   return (
     <>
-      <div className="px-4 md:px-10 flex flex-1 justify-center py-10 md:py-16 container mx-auto max-w-screen-2xl">
-        <div className="flex flex-col max-w-5xl flex-1 gap-12 md:gap-16">
+      <div className="px-4 md:px-10 flex flex-1 justify-center py-8 md:py-12 container mx-auto max-w-screen-2xl">
+        <div className="flex flex-col max-w-5xl flex-1 gap-10 md:gap-12">
           
           {/* Page Heading */}
           <div className="flex flex-wrap justify-center text-center gap-3 p-4">
@@ -35,10 +35,10 @@ export default function ContactPage() {
           </div>
 
           {/* Main Content Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 md:gap-10">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 md:gap-10">
             
             {/* Left Column: Contact Info & Map */}
-            <div className="lg:col-span-2 flex flex-col gap-10">
+            <div className="lg:col-span-2 flex flex-col gap-8">
               
               {/* Contact Information Section */}
               <div className="flex flex-col gap-4">

@@ -22,7 +22,7 @@ export default function Features() {
   ];
 
   return (
-    <section className="flex flex-col gap-10 px-4 sm:px-10 md:px-20 lg:px-40 py-10 container mx-auto max-w-screen-2xl" id="method">
+    <section className="flex flex-col gap-8 px-4 sm:px-10 md:px-20 lg:px-40 py-8 container mx-auto max-w-screen-2xl" id="method">
       <div className="flex flex-col gap-4">
         <h1 className="text-foreground tracking-tight text-[32px] font-bold leading-tight sm:text-4xl max-w-[720px]">
           {t('home.valueProps.title')}

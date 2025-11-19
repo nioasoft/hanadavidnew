@@ -17,7 +17,7 @@ export default function ProcessPage() {
   return (
     <>
       {/* Header Section */}
-      <section className="py-16 md:py-24 bg-background">
+      <section className="py-12 md:py-20 bg-background">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-black text-foreground mb-6 tracking-[-0.033em]">
             {t('process.header.title')}
@@ -29,7 +29,7 @@ export default function ProcessPage() {
       </section>
 
       {/* Intro Section */}
-      <section className="py-12 bg-muted/30">
+      <section className="py-10 bg-muted/30">
          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
              <h2 className="text-2xl font-bold text-foreground mb-4">
                  {t('process.intro.title')}
@@ -41,16 +41,16 @@ export default function ProcessPage() {
       </section>
 
       {/* Timeline Section */}
-      <section className="py-16 md:py-24">
+      <section className="py-12 md:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-card rounded-2xl border border-border p-8 md:p-12 shadow-sm">
+          <div className="bg-card rounded-2xl border border-border p-6 md:p-10 shadow-sm">
             <Timeline steps={steps} />
           </div>
         </div>
       </section>
 
       {/* Expectations Section */}
-      <section className="py-16 md:py-24 bg-muted/30">
+      <section className="py-12 md:py-20 bg-muted/30">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
@@ -61,7 +61,7 @@ export default function ProcessPage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Intro text */}
             <div className="lg:col-span-1">
-              <div className="h-full bg-card border border-border rounded-xl p-8 flex flex-col justify-center">
+              <div className="h-full bg-card border border-border rounded-xl p-6 md:p-8 flex flex-col justify-center">
                   <p className="text-xl font-medium text-foreground/90 leading-relaxed">
                     {t('process.expectations.intro')}
                   </p>
@@ -111,7 +111,7 @@ export default function ProcessPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 md:py-24 bg-background">
+      <section className="py-12 md:py-20 bg-background">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold text-foreground flex items-center justify-center gap-3">

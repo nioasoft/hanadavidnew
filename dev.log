@@ -110,3 +110,14 @@
  ✓ Compiled in 91ms
  GET /en/process 200 in 242ms (compile: 97ms, proxy.ts: 8ms, render: 138ms)
  GET /en/process 200 in 131ms (compile: 8ms, proxy.ts: 4ms, render: 119ms)
+ ✓ Compiled in 62ms
+ GET /en/process 200 in 161ms (compile: 102ms, proxy.ts: 9ms, render: 50ms)
+ GET /en/process 200 in 33ms (compile: 8ms, proxy.ts: 3ms, render: 23ms)
+ GET /en/process 200 in 17ms (compile: 3ms, proxy.ts: 2ms, render: 13ms)
+ GET /en/process 200 in 17ms (compile: 2ms, proxy.ts: 2ms, render: 12ms)
+ GET /en/process 200 in 18ms (compile: 3ms, proxy.ts: 2ms, render: 13ms)
+ ✓ Compiled in 69ms
+ ✓ Compiled in 31ms
+ ✓ Compiled in 32ms
+ GET /he/process 200 in 139ms (compile: 100ms, proxy.ts: 13ms, render: 27ms)
+ GET /he/about 200 in 103ms (compile: 73ms, proxy.ts: 5ms, render: 25ms)

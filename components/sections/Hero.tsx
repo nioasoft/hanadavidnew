@@ -20,9 +20,9 @@ export default function Hero({
   className = ''
 }: HeroProps) {
   return (
-    <section className={`py-12 md:py-20 lg:py-24 ${className}`} id="hero">
+    <section className={`py-10 md:py-16 lg:py-20 ${className}`} id="hero">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col gap-12 lg:flex-row-reverse lg:items-center lg:gap-16">
+        <div className="flex flex-col gap-10 lg:flex-row-reverse lg:items-center lg:gap-12">
           {/* Image Side */}
           <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
             <div className="relative aspect-square w-full max-w-md overflow-hidden rounded-2xl shadow-2xl ring-1 ring-gray-900/10 dark:ring-gray-100/10">
