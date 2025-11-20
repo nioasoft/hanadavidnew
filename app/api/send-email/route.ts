@@ -13,21 +13,22 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Recipient email address
-    const TO_EMAIL = 'miss.anna.davidi@gmail.com';
-    const FROM_EMAIL = 'onboarding@resend.dev'; // Or your verified domain
+    // Recipient email address for admin notifications
+    const ADMIN_EMAIL = 'miss.anna.davidi@gmail.com';
+    const FROM_EMAIL = 'noreply@limmudanglit.co.il';
 
     try {
-      console.log('Attempting to send email with Resend...', {
-        to: TO_EMAIL,
+      console.log('Attempting to send emails with Resend...', {
+        admin: ADMIN_EMAIL,
+        user: email,
         from: FROM_EMAIL,
         hasApiKey: !!process.env.RESEND_API_KEY,
-        apiKeyPrefix: process.env.RESEND_API_KEY?.substring(0, 10)
       });
 
-      const result = await resend.emails.send({
+      // Prepare admin email
+      const adminEmailPromise = resend.emails.send({
         from: `Hana David Website <${FROM_EMAIL}>`,
-        to: [TO_EMAIL],
+        to: [ADMIN_EMAIL],
         subject: `New contact form submission from ${name}`,
         html: `
           <h1>New Contact Form Submission</h1>
@@ -40,23 +41,51 @@ export async function POST(request: NextRequest) {
         `,
       });
 
-      console.log('Resend API response:', result);
+      // Prepare user confirmation email
+      const userEmailPromise = resend.emails.send({
+        from: `Hana David <${FROM_EMAIL}>`,
+        to: [email],
+        subject: `תודה על פנייתך / Thank you for contacting us`,
+        html: `
+          <div dir="rtl" style="text-align: right; font-family: Arial, sans-serif;">
+            <h2>שלום ${name},</h2>
+            <p>תודה שפנית אלינו. קיבלנו את פרטייך ואנו ניצור עמך קשר בהקדם.</p>
+          </div>
+          <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;" />
+          <div dir="ltr" style="text-align: left; font-family: Arial, sans-serif;">
+            <h2>Hello ${name},</h2>
+            <p>Thank you for contacting us. We have received your details and will be in touch shortly.</p>
+          </div>
+        `,
+      });
 
-      // Check if there's an error in the response
-      if (result.error) {
-        console.error('Resend API error details:', {
-          error: result.error,
-          name,
-          email,
-          timestamp: new Date().toISOString()
-        });
+      // Send both emails
+      const [adminResult, userResult] = await Promise.all([adminEmailPromise, userEmailPromise]);
+
+      console.log('Resend API responses:', { admin: adminResult, user: userResult });
+
+      // Check for errors in admin email (critical)
+      if (adminResult.error) {
+        console.error('Failed to send admin email:', adminResult.error);
         return NextResponse.json(
-          { error: 'Failed to send email', details: result.error.message },
+          { error: 'Failed to send admin email', details: adminResult.error.message },
           { status: 500 }
         );
       }
 
-      return NextResponse.json({ success: true, data: result.data });
+      // We consider it a success if at least the admin received the email, 
+      // but we log if the user email failed.
+      if (userResult.error) {
+        console.warn('Failed to send user confirmation email:', userResult.error);
+      }
+
+      return NextResponse.json({ 
+        success: true, 
+        data: { 
+          admin: adminResult.data, 
+          user: userResult.data 
+        } 
+      });
 
     } catch (resendError) {
       console.error('Resend SDK exception caught:', {
