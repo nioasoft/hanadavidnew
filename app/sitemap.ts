@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
 
-const baseUrl = 'https://hanadavid.com'; // עדכן לדומיין האמיתי
+const baseUrl = 'https://limmudanglit.co.il';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
