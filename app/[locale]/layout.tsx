@@ -19,7 +19,7 @@ const heebo = Heebo({
 });
 
 // SEO Configuration
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://hanadavid.com';
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://limmudanglit.co.il';
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
